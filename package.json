@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "migrations:up": "node -r dotenv/config migration.js up"
+    "migrations:up": "node -r dotenv/config migration.js up",
+    "migrations:down": "node -r dotenv/config migration.js down"
   },
   "dependencies": {
     "mysql-migrations": "^1.0.7",
