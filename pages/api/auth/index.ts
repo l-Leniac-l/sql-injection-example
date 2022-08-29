@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { mapUser, MysqlUser } from "../../../services/mappers/mapUser";
-import { excuteQuery } from "../../../utils/db";
+import { executeQuery } from "../../../utils/db";
 import { deleteCookie, setCookie } from "cookies-next";
 import { generateJwt } from "../../../utils/jwt";
 import crypto from "crypto";
@@ -39,7 +39,7 @@ export default async function handler(
 
   const query = `SELECT id, first_name, last_name, is_admin FROM users WHERE email='${user}' AND password_md5='${password}'`;
 
-  const result = await excuteQuery<unknown[]>({ query });
+  const result = await executeQuery<MysqlUser[]>({ query });
 
   if ("error" in result) {
     deleteCookie("x-app-user", { req, res });
@@ -53,7 +53,7 @@ export default async function handler(
     return res.status(401).end();
   }
 
-  const token = generateJwt(mapUser(userData as MysqlUser));
+  const token = generateJwt(mapUser(userData));
 
   const expires = new Date(new Date().getTime() + 86400000);
 

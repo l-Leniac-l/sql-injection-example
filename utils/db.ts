@@ -16,7 +16,7 @@ type QueryArgs = {
   values?: unknown[];
 };
 
-export async function excuteQuery<T>({ query, values }: QueryArgs) {
+export async function executeQuery<T>({ query, values }: QueryArgs) {
   try {
     const results = await db.query<T>(query, values);
     await db.end();
