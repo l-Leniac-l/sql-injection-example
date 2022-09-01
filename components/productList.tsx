@@ -22,8 +22,16 @@ export const ProductList = ({ products }: ProductListProps) => {
       }}
     >
       {products.map((product) => (
-        <Card variant="outlined" sx={{ width: "24%", marginBottom: "2%" }}>
-          <CardMedia component="img" height="200" image={product.imageUrl} />
+        <Card
+          key={product.id}
+          variant="outlined"
+          sx={{ width: "24%", marginBottom: "2%" }}
+        >
+          <CardMedia
+            component="img"
+            height="200"
+            image={`/assets/img/${product.imageUrl}`}
+          />
           <CardHeader title={product.name} />
           <CardContent>
             <Typography variant="body2" color="text.secondary">

@@ -43,7 +43,7 @@ const Home: NextPage = () => {
                 <CardMedia
                   component="img"
                   height="200"
-                  image="https://cdn.pocket-lint.com/r/s/x1920/assets/images/161396-laptops-review-hands-on-macbook-air-review-image1-v2jzcb3rqd.jpg"
+                  image="/assets/img/161396-laptops-review-hands-on-macbook-air-review-image1-v2jzcb3rqd.jpg"
                 />
                 <CardHeader title="Electronics" />
                 <CardContent>
@@ -61,7 +61,7 @@ const Home: NextPage = () => {
                 <CardMedia
                   component="img"
                   height="200"
-                  image="https://src.discounto.de/pics/Angebote/2017-11/2257247/3382916_Sessel-TOM-Lederlook-Schoko_xxl.jpg"
+                  image="/assets/img/3382916_Sessel-TOM-Lederlook-Schoko_xxl.jpg"
                 />
                 <CardHeader title="Furniture" />
                 <CardContent>
@@ -79,12 +79,12 @@ const Home: NextPage = () => {
                 <CardMedia
                   component="img"
                   height="200"
-                  image="https://image.smythstoys.com/zoom/8004207_3.jpg"
+                  image="/assets/img/8004207_3.jpg"
                 />
                 <CardHeader title="Rubik's Cubes" />
                 <CardContent>
                   <Typography variant="body2" color="text.secondary">
-                    The best Rubik's Cubes for the best prices!
+                    The best Rubik&apos;s Cubes for the best prices!
                   </Typography>
                 </CardContent>
               </Card>
