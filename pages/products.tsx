@@ -1,6 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import { Container } from "@mui/system";
 import { GetServerSideProps, NextPage } from "next";
+import { Header } from "../components/header";
 import { ProductList } from "../components/productList";
 import { mapProducts, MysqlProduct } from "../services/mappers/mapProduct";
 import { Product } from "../services/models/product";
@@ -71,23 +72,26 @@ const ProductsPage: NextPage<ProductsPageProps> = ({
   error,
 }) => {
   return (
-    <Container
-      maxWidth="lg"
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-      }}
-    >
-      <>
-        <Typography variant="h2">{category}</Typography>
-        <ProductList products={products} />
-        {error && (
-          <Typography variant="caption" color="red">
-            {error.code}
-          </Typography>
-        )}
-      </>
-    </Container>
+    <>
+      <Header />
+      <Container
+        maxWidth="lg"
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+        }}
+      >
+        <>
+          <Typography variant="h2">{category}</Typography>
+          <ProductList products={products} />
+          {error && (
+            <Typography variant="caption" color="red">
+              {error.code}
+            </Typography>
+          )}
+        </>
+      </Container>
+    </>
   );
 };
 
